@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Evidencija studenata</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('studenti') }}">Studenti</a>
+            </li>
+            <li class="nav-item active" >
+                <a class="nav-link" href="{{ url_for('predmeti') }}">Predmeti</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('render_korisnici') }}">Korisnici</a>
+            </li>
+        </ul>
+        <form class="form-inline">
+            <a href="{{ url_for('logout') }}" class="btn btn-primary">
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
+        </form>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row my-5 justify-content-end">
+        <a href="{{ url_for('korisnik_novi') }}" role="button" class="btn btn-primary">Dodaj korisnika</a>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Ime</th>
+                    <th scope="col">Prezime</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Akcije</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Petar</td>
+                    <td>Petrovic</td>
+                    <td>petar.petrovic@vtsnis.edu.rs</td>
+                    <td class="row">
+                        <a href="{{ url_for('korisnik_izmena', id=11) }}" role="button" class="text-warning mx-2">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="{{ url_for('korisnik_brisanje', id=11) }}" role="button" class="text-danger mx-2">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Petar</td>
+                    <td>Petrovic</td>
+                    <td>petar.petrovic@vtsnis.edu.rs</td>
+                    <td class="row">
+                        <a href="{{ url_for('korisnik_izmena', id=11) }}" role="button" class="text-warning mx-2">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="{{ url_for('korisnik_brisanje', id=11) }}" role="button" class="text-danger mx-2">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Petar</td>
+                    <td>Petrovic</td>
+                    <td>petar.petrovic@vtsnis.edu.rs</td>
+                    <td class="row">
+                        <a href="{{ url_for('korisnik_izmena', id=11) }}" role="button" class="text-warning mx-2">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="{{ url_for('korisnik_brisanje', id=11) }}" role="button" class="text-danger mx-2">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>   
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}
